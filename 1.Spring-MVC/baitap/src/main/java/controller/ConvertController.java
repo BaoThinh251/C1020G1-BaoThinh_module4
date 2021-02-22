@@ -10,8 +10,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class ConvertController {
 
     @GetMapping("/")
-    public String convert(@RequestParam int number, Model model) {
-        model.addAttribute("USD", number);
+    public String index() {
+        return "/index";
+    }
+    @PostMapping("/usd")
+    public String submit(@RequestParam String usd, String rate, Model model) {
+        float result = Float.parseFloat(usd)*Float.parseFloat(rate);
+        model.addAttribute("USD", result);
         return "/result";
     }
 }
