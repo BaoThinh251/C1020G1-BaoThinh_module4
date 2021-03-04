@@ -22,8 +22,8 @@ public class DictionaryServiceImpl implements DictionaryService {
     @Override
     public String compare(String keyword) {
         String result = null;
-        for (int i = 1; i < dictionaries.size()+1; i++) {
-            if (keyword.equalsIgnoreCase(dictionaries.get(i).getEn())){
+        for (int i = 1; i < dictionaries.size() + 1; i++) {
+            if (keyword.equalsIgnoreCase(dictionaries.get(i).getEn())) {
                 result = dictionaries.get(i).getVi();
                 break;
             } else {

@@ -16,7 +16,7 @@
 <form action="save" method="post">
     <table>
         <tr>
-            <td>Language: </td>
+            <td>Language:</td>
             <td>
                 <select name="language">
                     <option value="English">English</option>
@@ -27,7 +27,7 @@
             </td>
         </tr>
         <tr>
-            <td>Page size: </td>
+            <td>Page size:</td>
             <td>
                 Show
                 <select name="page">
@@ -43,11 +43,11 @@
             </td>
         </tr>
         <tr>
-            <td>Spams filter: </td>
+            <td>Spams filter:</td>
             <td><input type="checkbox" name="spam"> Enable Spams Filter</td>
         </tr>
         <tr>
-            <td>Signature: </td>
+            <td>Signature:</td>
             <td>
                 <input type="text" name="signature">
             </td>

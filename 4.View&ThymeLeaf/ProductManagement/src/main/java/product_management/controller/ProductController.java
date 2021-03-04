@@ -18,22 +18,22 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping("/")
-    public String showListProduct(Model model){
+    public String showListProduct(Model model) {
         List<Product> productList = productService.findAll();
-        model.addAttribute("productList",productList);
+        model.addAttribute("productList", productList);
 
         return "/home";
     }
 
     @GetMapping("/product/create")
-    public String getCreatePage(Model model){
-        model.addAttribute("product",new Product());
+    public String getCreatePage(Model model) {
+        model.addAttribute("product", new Product());
 
         return "/create";
     }
 
     @PostMapping("/product/save")
-    public String save(@ModelAttribute("product") Product product, RedirectAttributes redirectAttributes){
+    public String save(@ModelAttribute("product") Product product, RedirectAttributes redirectAttributes) {
         product.setId(productService.getIdProduct());
         productService.create(product);
         redirectAttributes.addFlashAttribute("message", "Successfully created !");
@@ -42,15 +42,15 @@ public class ProductController {
     }
 
     @GetMapping("/product/{id}/edit")
-    public String getEditPage(@PathVariable int id, Model model){
+    public String getEditPage(@PathVariable int id, Model model) {
         Product product = productService.findById(id);
-        model.addAttribute("editingProduct", product );
+        model.addAttribute("editingProduct", product);
 
         return "/edit";
     }
 
     @PostMapping("/product/update")
-    public String update(@ModelAttribute("product") Product product, RedirectAttributes redirectAttributes){
+    public String update(@ModelAttribute("product") Product product, RedirectAttributes redirectAttributes) {
         productService.updateById(product.getId(), product);
         redirectAttributes.addFlashAttribute("message", "Successfully updated !");
 
@@ -58,14 +58,14 @@ public class ProductController {
     }
 
     @GetMapping("/product/{id}/delete")
-    public String getDeletePage(@PathVariable int id,Model model){
+    public String getDeletePage(@PathVariable int id, Model model) {
         model.addAttribute("product", productService.findById(id));
 
         return "/delete";
     }
 
     @PostMapping("/product/delete")
-    public String delete(@ModelAttribute("product") Product product, RedirectAttributes redirectAttributes){
+    public String delete(@ModelAttribute("product") Product product, RedirectAttributes redirectAttributes) {
         productService.deleteById(product.getId());
         redirectAttributes.addFlashAttribute("message", "Successfully deleted !");
 
@@ -73,7 +73,7 @@ public class ProductController {
     }
 
     @GetMapping("/product/{id}/detail")
-    public String getDetailPage(@PathVariable int id, Model model){
+    public String getDetailPage(@PathVariable int id, Model model) {
         model.addAttribute("product", productService.findById(id));
 
         return "/detail";

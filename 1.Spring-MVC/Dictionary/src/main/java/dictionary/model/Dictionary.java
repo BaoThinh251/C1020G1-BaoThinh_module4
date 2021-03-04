@@ -3,6 +3,7 @@ package dictionary.model;
 public class Dictionary {
     private String en;
     private String vi;
+
     public Dictionary() {
     }
 

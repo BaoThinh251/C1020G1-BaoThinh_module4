@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form th:object="${user}" th:action="@{/validateUser}" method="post" >
+    <table>
+        <tr>
+            <td>Name: </td>
+            <td><input th:field="*{name}"></td>
+            <td class="error-box" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Format Error</td>
+        </tr>
+        <tr>
+            <td>Age: </td>
+            <td><input th:field="*{age}"></td>
+            <td class="error-box" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Error Age</td>
+        </tr>
+        <tr>
+            <td>Phone Number: </td>
+            <td><input th:field="*{phone}"></td>
+            <td class="error-box" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}">Error phone format</td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit">Submit</button>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

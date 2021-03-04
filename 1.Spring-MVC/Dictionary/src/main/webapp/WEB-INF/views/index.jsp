@@ -7,16 +7,16 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
+<head>
     <title>$Title$</title>
-  </head>
-  <body>
-  <h1>English-Vietnamese Dictionary</h1>
-  <form method="post" action="/result">
+</head>
+<body>
+<h1>English-Vietnamese Dictionary</h1>
+<form method="post" action="/result">
     <label>
-      <input type="search" name="keyword">
+        <input type="search" name="keyword">
     </label>
     <input type="submit" value="Search">
-  </form>
-  </body>
+</form>
+</body>
 </html>

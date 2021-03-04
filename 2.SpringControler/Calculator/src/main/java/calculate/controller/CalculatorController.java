@@ -21,7 +21,7 @@ public class CalculatorController {
 
     @GetMapping("calculate")
     public String calculate(@RequestParam(value = "sign") String sign, @RequestParam(value = "number1") int number1,
-                            @RequestParam(value = "number2") int number2, Model model){
+                            @RequestParam(value = "number2") int number2, Model model) {
         String result = calculate.calculate(sign, number1, number2);
         model.addAttribute("result", result);
         return "index";

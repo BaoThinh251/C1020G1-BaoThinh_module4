@@ -11,6 +11,6 @@
     <title>Success</title>
 </head>
 <body>
-    <h3>Hi ${email}</h3>
+<h3>Hi ${email}</h3>
 </body>
 </html>

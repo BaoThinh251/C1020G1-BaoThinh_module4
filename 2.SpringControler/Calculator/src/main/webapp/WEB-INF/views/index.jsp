@@ -7,24 +7,24 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
+<head>
     <title>$Title$</title>
-  </head>
-  <body>
-  <form action="calculate">
+</head>
+<body>
+<form action="calculate">
     <table border="1px" style="text-align: center">
-      <tr>
-        <td colspan="2"><input type="number" name="number1" value="0" placeholder="number 1"/></td>
-        <td colspan="2"><input type="number" name="number2" value="0" placeholder="number 2"/></td>
-      </tr>
-      <tr>
-        <td><input type="submit" name="sign" value="plus"/></td>
-        <td><input type="submit" name="sign" value="minus"/></td>
-        <td><input type="submit" name="sign" value="time"/></td>
-        <td><input type="submit" name="sign" value="divide"/></td>
-      </tr>
+        <tr>
+            <td colspan="2"><input type="number" name="number1" value="0" placeholder="number 1"/></td>
+            <td colspan="2"><input type="number" name="number2" value="0" placeholder="number 2"/></td>
+        </tr>
+        <tr>
+            <td><input type="submit" name="sign" value="plus"/></td>
+            <td><input type="submit" name="sign" value="minus"/></td>
+            <td><input type="submit" name="sign" value="time"/></td>
+            <td><input type="submit" name="sign" value="divide"/></td>
+        </tr>
     </table>
-  </form>
-  <h2>${result}</h2>
-  </body>
+</form>
+<h2>${result}</h2>
+</body>
 </html>

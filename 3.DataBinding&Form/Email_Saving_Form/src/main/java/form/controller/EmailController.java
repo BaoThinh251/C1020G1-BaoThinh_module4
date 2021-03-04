@@ -15,8 +15,8 @@ public class EmailController {
     }
 
     @RequestMapping("save")
-    public String create(@RequestParam(value = "language", required = false) String language, @RequestParam(value = "page",required = false) String page,
-                         @RequestParam(value = "spamsFilter", required = false) boolean spam, @RequestParam(value = "signature",required = false) String signature, Model model){
+    public String create(@RequestParam(value = "language", required = false) String language, @RequestParam(value = "page", required = false) String page,
+                         @RequestParam(value = "spamsFilter", required = false) boolean spam, @RequestParam(value = "signature", required = false) String signature, Model model) {
         model.addAttribute("language", language);
         model.addAttribute("page", page);
         model.addAttribute("spam", spam);

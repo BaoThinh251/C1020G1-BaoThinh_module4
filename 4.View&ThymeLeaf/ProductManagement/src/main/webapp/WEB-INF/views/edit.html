@@ -8,7 +8,7 @@
 <body>
 <h2>Edit Product</h2>
 <div id="form">
-    <form  action="#" th:action="@{/product/update}" th:object="${editingProduct}" method="POST" novalidate="novalidate">
+    <form action="#" th:action="@{/product/update}" th:object="${editingProduct}" method="POST" novalidate="novalidate">
         <input type="hidden" th:field="*{id}"/>
         <div>
             <label>Product Name</label>

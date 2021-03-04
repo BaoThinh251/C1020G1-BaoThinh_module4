@@ -34,7 +34,7 @@ public class CustomerController {
 
     @PostMapping("/customer/save")
     public String save(Customer customer) {
-        customer.setId((int)(Math.random() * 10000));
+        customer.setId((int) (Math.random() * 10000));
         customerService.save(customer);
         return "redirect:/";
     }

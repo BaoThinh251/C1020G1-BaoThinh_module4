@@ -15,9 +15,9 @@ public class SandwichController {
 
 
     @GetMapping("choose")
-    public String save(@RequestParam(value = "ingredient", required = false) String ingredient, Model model){
+    public String save(@RequestParam(value = "ingredient", required = false) String ingredient, Model model) {
         String message;
-        if(ingredient == null) {
+        if (ingredient == null) {
             message = "Please choose!";
         } else {
             message = ingredient;

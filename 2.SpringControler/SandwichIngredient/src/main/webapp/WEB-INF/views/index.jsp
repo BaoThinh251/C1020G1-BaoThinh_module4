@@ -7,23 +7,23 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
+<head>
     <title>$Title$</title>
-  </head>
-  <body>
-  <h3>SANDWICH INGREDIENT</h3>
-  <form action="choose">
+</head>
+<body>
+<h3>SANDWICH INGREDIENT</h3>
+<form action="choose">
     <table>
-      <tr>
-        <td>Lettuce<input type="checkbox" name="ingredient" value="lettuce"/></td>
-        <td>Tomato<input type="checkbox" name="ingredient" value="tomato"/></td>
-        <td>Mustard<input type="checkbox" name="ingredient" value="mustard"/></td>
-        <td>Sprout<input type="checkbox" name="ingredient" value="sprout"/></td>
-      </tr>
-      <tr>
-        <td><input type="submit" name="save"/></td>
-      </tr>
+        <tr>
+            <td>Lettuce<input type="checkbox" name="ingredient" value="lettuce"/></td>
+            <td>Tomato<input type="checkbox" name="ingredient" value="tomato"/></td>
+            <td>Mustard<input type="checkbox" name="ingredient" value="mustard"/></td>
+            <td>Sprout<input type="checkbox" name="ingredient" value="sprout"/></td>
+        </tr>
+        <tr>
+            <td><input type="submit" name="save"/></td>
+        </tr>
     </table>
-  </form>
-  </body>
+</form>
+</body>
 </html>
