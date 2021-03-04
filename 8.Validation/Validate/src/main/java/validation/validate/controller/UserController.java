@@ -23,7 +23,7 @@ public class UserController {
         return "form";
     }
 
-    @PostMapping("/form")
+    @PostMapping("/validateUser")
     public ModelAndView validate(@Validated @ModelAttribute("user") User user, BindingResult bindingResult){
         if (bindingResult.hasFieldErrors()) {
             ModelAndView modelAndView = new ModelAndView("form");
