@@ -29,7 +29,7 @@ public class Book {
         this.name = name;
     }
 
-    public String getRentCode() { return rentCode; }
+    public  String getRentCode() { return rentCode; }
 
     public void setRentCode(String rentCode) { this.rentCode = rentCode; }
 

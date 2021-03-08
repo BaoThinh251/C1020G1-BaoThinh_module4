@@ -1,5 +1,6 @@
 package opa.demo.log;
 
+import jdk.nashorn.internal.ir.CallNode;
 import opa.demo.controllers.BookController;
 import opa.demo.models.Book;
 import opa.demo.repositorys.BookRepository;
@@ -21,30 +22,22 @@ import org.springframework.web.filter.CommonsRequestLoggingFilter;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.lang.reflect.Method;
+import java.util.Arrays;
 
 @Aspect
 public class Logger {
     private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(BookController.class);
 
-    @Autowired
-    BookService bookService;
-
-    Book books;
-
-    @PostMapping("/return")
-    public Book getBook(@RequestParam String rentCode) {
-        books = bookService.findByRentCode(rentCode);
-        return books;
-    }
-
     @AfterReturning("execution(* opa.demo.controllers.BookController.rentBook(*,*))")
-    public void afterRenting() {
-        LOGGER.info("rent");
+    public void afterRenting(JoinPoint joinPoint) {
+        String args = Arrays.toString(joinPoint.getArgs());
+        LOGGER.info("rent" + args);
     }
 
     @AfterReturning("execution(* opa.demo.controllers.BookController.returnBook(*,*))")
-    public void afterReturning(){
-        LOGGER.info("return");
+    public void afterReturning(JoinPoint joinPoint){
+        String args = Arrays.toString(joinPoint.getArgs());
+        LOGGER.info("return" + args);
     }
 
 }
