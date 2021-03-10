@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        tbody {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h3>Shopping site</h3>
+<a th:href="@{/show_cart}" role="button">Your cart</a>
+<table>
+    <thead>
+    <tr>
+        <th>Product Name</th>
+        <td></td>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="product : ${productList}">
+        <td th:text="${product.getName()}"></td>
+        <td></td>
+        <td><a th:href="@{/view/{id}(id=${product.id})}">Info</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

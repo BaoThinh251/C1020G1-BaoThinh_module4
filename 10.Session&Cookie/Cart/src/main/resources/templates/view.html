@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<h3>Product detail</h3>
+<p>
+    <a href="/">Back to market</a>
+</p>
+<div>
+    <form th:object="${product}">
+        <table>
+            <tr>
+                <td>Product Id:</td>
+                <td><input type="text" disabled th:field="*{id}"/></td>
+            </tr>
+            <tr>
+                <td>Product Name:</td>
+                <td><input type="text" disabled th:field="*{name}"/></td>
+            </tr>
+            <tr>
+                <td>Price:</td>
+                <td><input type="text" disabled th:field="*{price}"/></td>
+            </tr>
+            <tr>
+                <a th:href="@{/order/{id}(id=${product.id})}" role="button" style="margin-left: 20%">Order</a>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

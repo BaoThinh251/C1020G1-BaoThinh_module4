@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<h3>Your Cart</h3>
+<table>
+    <thead>
+    <tr>
+        <th>Product Name</th>
+        <td></td>
+        <th>Price</th>
+        <td></td>
+        <th>Quantity</th>
+        <td></td>
+        <th>Total</th>
+        <td></td>
+        <th>Change the quantity</th>
+        <td></td>
+        <th>Change</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="product : ${cart}">
+        <form th:action="@{/change}">
+            <td th:text="${product.getName()}"></td>
+            <td></td>
+            <td th:text="${product.getPrice()}"></td>
+            <td></td>
+            <td th:text="${product.getQuantity()}"></td>
+            <td></td>
+            <td th:text="${product.getQuantity()*product.getPrice()}"></td>
+            <td></td>
+            <td>
+                <input th:type="number" placeholder="Input number" name="change">
+                <input th:type="hidden" name="id" th:value="${product.id}">
+            </td>
+            <td></td>
+            <td>
+                <button type="submit">update</button>
+                <button type="button">
+                    <a th:href="@{/delete_product/{id}(id=${product.id})}">Delete Product</a>
+                </button>
+            </td>
+        </form>
+    </tr>
+    </tbody>
+</table>
+<a th:href="@{/delete_product/{id}(id=${0})}">Delete All Cart</a>
+<a th:href="@{/}">Back to market</a>
+</body>
+</html>

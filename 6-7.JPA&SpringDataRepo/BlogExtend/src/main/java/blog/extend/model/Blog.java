@@ -14,7 +14,7 @@ public class Blog {
     @Temporal(TemporalType.TIMESTAMP)
     private Date date;
     @ManyToOne
-    @JoinColumn(name = "category_id" , referencedColumnName = "id")
+    @JoinColumn(name = "category_id" , referencedColumnName = "category_id")
     private Category category;
 
 
