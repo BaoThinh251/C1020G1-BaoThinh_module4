@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+
+<h2><a href="/list">Back to Customer List</a></h2>
+
+<div class="col-lg-8" style="padding: 0">
+    <div class="body" style="text-align: center">
+        <h2>Customer Information</h2>
+        <form th:action="@{/edit}" method="post" th:object="${customer}">
+            <input type="hidden" th:field="*{customerId}">
+            <table cellpadding="5" style="text-align: left">
+<!--                <tr>-->
+<!--                    <th>Customer type:</th>-->
+<!--                    <td>-->
+<!--                        <select th:field="*{customerType}">-->
+<!--                            <option th:each="customerType : ${customerTypes}" th:value="${customerType.customerIdType}"-->
+<!--                                    th:text="${customerType.customerTypeName}"></option>-->
+<!--                        </select>-->
+<!--                    </td>-->
+<!--                </tr>-->
+                <tr>
+                    <th>Customer Name:</th>
+                    <td>
+                        <input type="text" th:field="*{customerName}" size="45"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Date Of Birth:</th>
+                    <td>
+                        <input type="text" width="200" th:field="*{birthDay}" style="height: 25px" />
+                    </td>
+                </tr>
+                <tr>
+                    <th>Gender:</th>
+                    <td>
+                        <input type="text" th:field="*{gender}" />
+<!--                        <select th:field="*{customerGender}">-->
+<!--                            <option value="Nam">Nam</option>-->
+<!--                            <option value="Nữ">Nữ</option>-->
+<!--                        </select>-->
+                    </td>
+                </tr>
+                <tr>
+                    <th>Id of Customer:</th>
+                    <td>
+                        <input type="text" th:field="*{idOfCustomer}" size="45"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Phone number:</th>
+                    <td>
+                        <input type="text" th:field="*{customerPhoneNumber}" size="45"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Email:</th>
+                    <td>
+                        <input type="text" th:field="*{customerEmail}" size="45"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Address:</th>
+                    <td>
+                        <input type="text" th:field="*{customerAddress}" size="45"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" value="Save"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
