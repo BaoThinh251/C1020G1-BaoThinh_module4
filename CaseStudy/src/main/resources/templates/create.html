@@ -1,12 +1,51 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org/1999/xhtml">
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-<form method="post" action="/save">
-        <input type="submit" value="Add"/>
+<form th:object="${customer}" th:action="@{/save}" method="post" >
+    <table>
+        <input type="hidden" th:text="*{customerId}"/>
+        <tr>
+            <td>Customer Type: </td>
+            <td><input th:field="*{idType}"></td>
+        </tr>
+        <tr>
+            <td>Name: </td>
+            <td><input th:field="*{customerName}"></td>
+        </tr>
+        <tr>
+            <td>Age: </td>
+            <td><input th:field="*{birthDay}"></td>
+        </tr>
+        <tr>
+            <td>Gender: </td>
+            <td><input th:field="*{gender}"></td>
+        </tr>
+        <tr>
+            <td>Id: </td>
+            <td><input th:field="*{idOfCustomer}"></td>
+        </tr>
+        <tr>
+            <td>Phone Number: </td>
+            <td><input th:field="*{customerPhoneNumber}"></td>
+        </tr>
+        <tr>
+            <td>Email: </td>
+            <td><input th:field="*{customerEmail}"></td>
+        </tr>
+        <tr>
+            <td>Address: </td>
+            <td><input th:field="*{customerAddress}"></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit">Submit</button>
+            </td>
+        </tr>
+    </table>
 </form>
 </body>
 </html>

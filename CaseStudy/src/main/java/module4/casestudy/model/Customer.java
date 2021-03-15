@@ -7,7 +7,7 @@ public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int customerId;
 
     private int idType;
 
@@ -15,9 +15,9 @@ public class Customer {
 
     private String birthDay;
 
-    private String customerGender;
+    private String gender;
 
-    private String customerIdCard;
+    private String idOfCustomer;
 
     private String customerPhoneNumber;
 
@@ -28,12 +28,12 @@ public class Customer {
     public Customer() {
     }
 
-    public int getId() {
-        return id;
+    public int getCustomerId() {
+        return customerId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setCustomerId(int id) {
+        this.customerId = id;
     }
 
     public int getIdType() {
@@ -60,20 +60,20 @@ public class Customer {
         this.birthDay = birthDay;
     }
 
-    public String getCustomerGender() {
-        return customerGender;
+    public String getGender() {
+        return gender;
     }
 
-    public void setCustomerGender(String customerGender) {
-        this.customerGender = customerGender;
+    public void setGender(String customerGender) {
+        this.gender = customerGender;
     }
 
-    public String getCustomerIdCard() {
-        return customerIdCard;
+    public String getIdOfCustomer() {
+        return idOfCustomer;
     }
 
-    public void setCustomerIdCard(String customerIdCard) {
-        this.customerIdCard = customerIdCard;
+    public void setIdOfCustomer(String customerIdCard) {
+        this.idOfCustomer = customerIdCard;
     }
 
     public String getCustomerPhoneNumber() {

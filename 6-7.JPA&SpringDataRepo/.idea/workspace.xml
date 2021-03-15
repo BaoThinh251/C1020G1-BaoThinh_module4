@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f1dd0b11-5b63-444f-854f-d14b223f83a1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../12.AJAX/ajaz/src/main/resources/templates/page.html" beforeDir="false" afterPath="$PROJECT_DIR$/../12.AJAX/ajaz/src/main/resources/templates/page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy/src/main/java/module4/casestudy/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/module4/casestudy/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy/src/main/java/module4/casestudy/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/module4/casestudy/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy/src/main/resources/templates/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/templates/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy/src/main/resources/templates/mainpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy/src/main/resources/templates/mainpage.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1pmZazJxMsMAnBrmxMw32WGZtJS" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/BlogExtend" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f1dd0b11-5b63-444f-854f-d14b223f83a1" name="Default Changelist" comment="" />
+      <created>1615790293300</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1615790293300</updated>
+      <workItem from="1615790295817" duration="10000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="690" y="239" key="FileChooserDialogImpl" timestamp="1615790303841">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="690" y="239" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1615790303841" />
+  </component>
+</project>

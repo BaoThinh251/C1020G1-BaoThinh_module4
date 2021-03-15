@@ -7,6 +7,6 @@ import org.springframework.data.domain.Pageable;
 public interface CustomerService {
     Page<Customer> findAll(Pageable pageable);
     void save (Customer customer);
-    Customer findById (int id);
-    void delete (Customer customer);
+    Customer findById (int customerId);
+    void deleteById(int id);
 }
