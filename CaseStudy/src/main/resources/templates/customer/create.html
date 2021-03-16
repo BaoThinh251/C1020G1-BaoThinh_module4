@@ -5,7 +5,7 @@
     <title>Create</title>
 </head>
 <body>
-<form th:object="${customer}" th:action="@{/save}" method="post" >
+<form th:object="${customer}" th:action="@{/save}" method="post"    >
     <table>
         <input type="hidden" th:text="*{customerId}"/>
         <tr>

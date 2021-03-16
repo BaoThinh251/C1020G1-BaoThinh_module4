@@ -11,7 +11,7 @@
 <div class="col-lg-8" style="padding: 0">
     <div class="body" style="text-align: center">
         <h2>Customer Information</h2>
-        <form th:action="@{/edit}" method="post" th:object="${customer}">
+        <form th:action="@{/customer/edit}" method="post" th:object="${customer}">
             <input type="hidden" th:field="*{customerId}">
             <table cellpadding="5" style="text-align: left">
 <!--                <tr>-->
