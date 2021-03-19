@@ -20,6 +20,11 @@ public class ContractServiceImpl implements ContractService {
     }
 
     @Override
+    public void deleteById(Contract contract) {
+        contractRepository.deleteContract(contract);
+    }
+
+    @Override
     public Contract findById(Integer id) {
         return contractRepository.findById(id).orElse(null);
     }

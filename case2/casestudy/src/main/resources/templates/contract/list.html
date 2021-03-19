@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
 </head>
 <body>
 
@@ -9,22 +12,11 @@
         <div class="table-title">
             <div class="row">
                 <div class="col-sm-8">
-                    <h2>
-                        Contract <b>Details</b>
-                        <span>
-                                    <a th:href="@{/contract/create}">
-                                        <button class="btn btn-danger profile-button" type="button">
-                                          Add New
-                                        </button>
-                                    </a>
-                                </span>
-                    </h2>
                 </div>
                 <div class="col-sm-4">
                     <div class="table-search-box">
                         <form th:action="@{/contract/search}" id="searchForm">
                             <a class="search-btn" onclick="$('#searchForm').submit()">
-                                <i class="material-icons">&#xE8B6;</i>
                             </a>
                             <input
                                     type="text"
@@ -68,14 +60,14 @@
                             class="edit"
                             title="Edit"
                             data-toggle="tooltip"
-                    ><i class="material-icons">&#xE254;</i></a
+                    ><i class="material-icons">Edit</i></a
                     >
                     <a
                             th:href="@{/contract/detail/{id}(id=${contract.id})}"
                             class="my_library_books"
                             title="Detail"
                             data-toggle="tooltip"
-                    ><i class="material-icons">&#xe02f;</i></a
+                    ><i class="material-icons">Detail</i></a
                     >
                     <a
                             href="#deleteModal"
@@ -85,7 +77,7 @@
                             th:onclick="|setId(${contract.id})|"
 
                     >
-                        <i class="material-icons">&#xE872;</i>
+                        <i class="material-icons">Delete</i>
                     </a>
                 </td>
             </tr>
@@ -94,7 +86,33 @@
     </div>
 </div>
 
-<form action="/customer/delete" id="delete-item">
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Confirm Delete</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure to delete this contract?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">
+                    <a onclick="submitFormDelete()"
+                       style="color: white;text-decoration: none">
+                        Delete</a></button>
+                <button type="button" class="btn btn-secondary"
+                        data-dismiss="modal">
+                    <a style="color: white;text-decoration: none">
+                        Cancel</a></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form action="/contract/delete" id="delete-item">
     <input type="hidden" id="id-item" name="id" />
 </form>
 
@@ -116,6 +134,9 @@
         document.getElementById("delete-item").submit();
     }
 </script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
 
 </body>
 </html>

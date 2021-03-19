@@ -8,13 +8,10 @@ import org.springframework.stereotype.Service;
 @Service
 public interface ContractService {
     Page<Contract> findAll (Pageable pageable);
-
+    void deleteById(Contract contract);
     Contract findById(Integer id);
-
     void save(Contract contract);
-
     Page<Contract> findAllByStartDateBeforeAndEndDateAfter(String currentDate, Pageable pageable);
-
     Page<Contract> findAllByStartDateBeforeAndEndDateAfterAndCustomer_Name(String currentDate, String name, Pageable pageable);
 
 

@@ -7,6 +7,7 @@ import casestudy.module4.service.employee.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -53,7 +54,7 @@ public class EmployeeController {
 
 
     @GetMapping("/list")
-    public String employeeList (Model model, Pageable pageable) {
+    public String employeeList (Model model, @PageableDefault(size = 5) Pageable pageable) {
         model.addAttribute("employeeList", employeeService.findAll(pageable));
         return "/employee/list";
     }
@@ -84,7 +85,7 @@ public class EmployeeController {
     }
 
     @GetMapping("/search")
-    public String search(@RequestParam("search-data") String input, Model model, Pageable pageable){
+    public String search(@RequestParam("search-data") String input, Model model, @PageableDefault(size = 5) Pageable pageable){
         Page<Employee> employees =  employeeService.findAllEmployeeByName(input, pageable);
 
         if(employees.isEmpty())

@@ -20,7 +20,7 @@
                         <h6>
                             <a href="/services">Back</a>
                         </h6>
-                        <form th:action="@{/services/search}" th:name = "keyword">
+                        <form th:action="@{/services/search}" >
                             <a class="search-btn" onclick="$('#searchForm').submit()">
                             </a>
                             <input
@@ -109,7 +109,7 @@
     </div>
 </div>
 
-<form action="/customer/delete" id="formDelete">
+<form action="/services/delete" id="formDelete">
     <input type="hidden" name="id" id="idCustomerHidden"/>
 </form>
 

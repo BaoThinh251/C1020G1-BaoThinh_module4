@@ -20,7 +20,7 @@
                         <h6>
                             <a href="/customer">Back</a>
                         </h6>
-                        <form th:action="@{/employee/search}" id = "searchForm" >
+                        <form th:action="@{/employee/search}">
                             <a class="search-btn" onclick="$('#searchForm').submit()">
                             </a>
                             <input
@@ -40,15 +40,16 @@
             <thead>
             <tr>
                 <th>ID</th>
-                <th>Type</th>
-                <th>Code</th>
                 <th>Name</th>
-                <th>Birthday</th>
-                <th>Gender</th>
-                <th>ID Card</th>
-                <th>Phone</th>
+                <th>Birth Day</th>
+                <th>Id Card</th>
+                <th>Salary</th>
+                <th>Phone number</th>
                 <th>Email</th>
                 <th>Address</th>
+                <th>Position</th>
+                <th>Education Degree</th>
+                <th>Divison</th>
                 <th>Action</th>
             </tr>
             </thead>

@@ -139,5 +139,11 @@ public class ContractController {
         return "/contract/edit";
     }
 
+    @GetMapping("/delete")
+    public String deleteContract(@RequestParam("id") Integer id){
+        contractService.deleteById(contractService.findById(id));
+
+        return "redirect:/contract/list";
+    }
 }
 

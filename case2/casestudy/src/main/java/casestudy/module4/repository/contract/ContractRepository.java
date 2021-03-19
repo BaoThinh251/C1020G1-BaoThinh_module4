@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ContractRepository extends JpaRepository<Contract, Integer> {
     Page<Contract> findAllByStartDateBeforeAndEndDateAfter(String startDate, String endDate, Pageable pageable);
-
+    void deleteContract (Contract contract);
     Page<Contract> findAllByStartDateBeforeAndEndDateAfterAndCustomer_CustomerName(String startDate, String endDate, String name, Pageable pageable);
 }

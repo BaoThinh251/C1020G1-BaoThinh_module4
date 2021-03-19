@@ -2,6 +2,7 @@ package casestudy.module4.model.services;
 
 import javax.persistence.*;
 import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
 @Entity
@@ -12,10 +13,11 @@ public class Services {
     @Column(name = "service_id")
     private Integer serviceId;
 
-    @Pattern(regexp = "^(DV-)\\d{4}$", message = "Code must be DV-XXXX (with X is 0-9")
+    @Pattern(regexp = "^(DV-)\\d{4}$", message = "Code must be DV-XXXX (with X is 0-9)")
     @Column(name = "service_code")
     private String serviceCode;
 
+    @NotBlank(message = "Must not be blank")
     @Column(name = "service_name")
     private String serviceName;
 
@@ -31,9 +33,11 @@ public class Services {
     @Column(name = "max_people")
     private int maxPeople;
 
+    @NotBlank(message = "Must not be blank")
     @Column(name = "room_type")
     private String roomType;
 
+    @NotBlank(message = "Must not be blank")
     @Column(name = "other_description")
     private String otherDescription;
 
