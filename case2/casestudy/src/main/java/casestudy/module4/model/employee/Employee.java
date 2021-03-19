@@ -1,42 +1,73 @@
 package casestudy.module4.model.employee;
 
+import casestudy.module4.model.contract.Contract;
+
 import javax.persistence.*;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+import java.util.List;
 
 @Entity
+@Table(name = "employee")
 public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int employeeId;
+    @Column(name = "employee_id")
+    private Integer employeeId;
 
+    @NotBlank(message = "Must not be blank")
+    @Column(name = "employee_name", length = 45, nullable = false)
     private String employeeName;
 
+    @Column(name = "employee_birthday", nullable = false, columnDefinition = "date")
     private String employeeBirthDay;
 
+    @Pattern(regexp = "(^\\d{9}$)|(^\\d{12}$)", message = "ID Card must be 9 or 12 character")
+    @Column(name = "employee_id_card", nullable = false, length = 45)
     private String idOfEmployee;
 
-    private double employeeSalary;
+    @DecimalMin(value = "0.01", message = "Salary must be positive number")
+    @Column(name = "employee_salary", nullable = false)
+    private Double employeeSalary;
 
+    @Pattern(regexp = "(^(090)\\d{7}$)|(^(091)\\d{7}$)|(^(\\+\\(84\\) 90)\\d{7}$)|(^(\\+\\(84\\) 91)\\d{7}$)",
+            message = "Phone number must be (090)-(091)-(+84-90)-(+84-91)")
+    @Column(name = "employee_phonenumber", length = 45, nullable = false)
     private String employeePhoneNumber;
 
+    @Pattern(regexp = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$", message = "Email must be abc@abc.abc")
+    @Column(name = "employee_email", length = 45, nullable = false)
     private String employeeEmail;
 
+    @NotBlank(message = "Must not be blank")
+    @Column(name = "employee_address", length = 45)
     private String employeeAddress;
 
-    private int positionId;
+    @ManyToOne
+    @JoinColumn(name = "position_id", referencedColumnName = "position_id")
+    private Position position;
 
-    private int eduDegreeId;
+    @ManyToOne
+    @JoinColumn(name = "education_degree_id", referencedColumnName = "education_degree_id")
+    private EducationDegree educationDegree;
 
-    private int divisonId;
+    @ManyToOne
+    @JoinColumn(name = "division_id", referencedColumnName = "division_id")
+    private Division division;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "employee")
+    private List<Contract> contracts;
 
     public Employee() {
     }
 
-    public int getEmployeeId() {
+    public Integer getEmployeeId() {
         return employeeId;
     }
 
-    public void setEmployeeId(int employeeId) {
+    public void setEmployeeId(Integer employeeId) {
         this.employeeId = employeeId;
     }
 
@@ -64,11 +95,11 @@ public class Employee {
         this.idOfEmployee = idOfEmployee;
     }
 
-    public double getEmployeeSalary() {
+    public Double getEmployeeSalary() {
         return employeeSalary;
     }
 
-    public void setEmployeeSalary(double employeeSalary) {
+    public void setEmployeeSalary(Double employeeSalary) {
         this.employeeSalary = employeeSalary;
     }
 
@@ -96,27 +127,27 @@ public class Employee {
         this.employeeAddress = employeeAddress;
     }
 
-    public int getPositionId() {
-        return positionId;
+    public Position getPosition() {
+        return position;
     }
 
-    public void setPositionId(int positionId) {
-        this.positionId = positionId;
+    public void setPosition(Position position) {
+        this.position = position;
     }
 
-    public int getEduDegreeId() {
-        return eduDegreeId;
+    public EducationDegree getEducationDegree() {
+        return educationDegree;
     }
 
-    public void setEduDegreeId(int eduDegreeId) {
-        this.eduDegreeId = eduDegreeId;
+    public void setEducationDegree(EducationDegree educationDegree) {
+        this.educationDegree = educationDegree;
     }
 
-    public int getDivisonId() {
-        return divisonId;
+    public Division getDivision() {
+        return division;
     }
 
-    public void setDivisonId(int divisonId) {
-        this.divisonId = divisonId;
+    public void setDivision(Division division) {
+        this.division = division;
     }
 }
